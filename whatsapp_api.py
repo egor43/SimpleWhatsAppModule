@@ -344,7 +344,7 @@ def send_media_message(token, recipient, type, media_id):
     elif type == 'document':
         body_raw['document'] = {'id': media_id}
     else:
-        raise Exception('Отсутствует параметр media_id')
+        raise Exception('Передан недопустимый type')
 
     # Получаем адрес запроса
     address = whatsapp_utils.get_request_address(API_HOST, API_VER, 'messages')
